@@ -7,8 +7,8 @@ template = """
     Your goal is to:
     - Properly redact a user story following the pattern: 'As [user role], I want [action], for [benefit].' 
     - create a set of user stories instead of a single one if needed.
-    - Your response should be translated into spanish
-    - try to create the minimal number of user stories
+    - Your response should be translated into spanish.
+    - try to create the minimal number of user stories when it is possible.
     
     Here are some examples :
     - Example 1:
