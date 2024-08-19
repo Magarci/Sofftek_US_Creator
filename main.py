@@ -38,8 +38,7 @@ template = """
         -El reporte debe incluir un resumen visual (gráfica) del uso promedio en las últimas 24 horas.
         -Si el uso de recursos supera el 80%, debe generarse una alerta en el reporte y en el sistema de notificaciones.
     
-    Please start the redaction with a warm introduction. Add the introduction \
-        if you need to.
+    Please start the redaction with a warm introduction. Empieza siempre diciendo: Bienvenid@ a la aplicacion de IA de Softtek para ayudar a la creacion de historias de usuario
     
     Below is the draft text:
     DRAFT: {draft}
