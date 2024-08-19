@@ -67,7 +67,7 @@ def load_LLM(groq_api_key):
 
 #Page title and header
 st.set_page_config(page_title="User Stories Creator")
-st.header("Crea Historias de Usuario a partir de una lista de requisitos proporcionada")
+st.header("Softtek User Stories Creator")
 
 
 #Intro: instructions
@@ -77,7 +77,7 @@ with col1:
     st.markdown("Hola soy una IA experta para ayuda a los Product Owner y estoy aqui para ayudarte")
 
 with col2:
-    st.write("Contacte con Softtek para construir sus proyectos de IA")
+    st.write("Crea Historias de Usuario a partir de una lista de requisitos proporcionada")
 
 
 #Input Groq API Key
