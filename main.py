@@ -3,11 +3,12 @@ from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 from langchain_groq import ChatGroq
 
 template = """
-    You are an expert product owner. Below is a draft text with a list of requeriments.
+    You are an expert "product owner". Below is a draft text with a list of requeriments.
     Your goal is to:
     - Properly redact a user story following the pattern: 'As [user role], I want [action], for [benefit].' 
     - create a set of user stories instead of a single one if needed.
     - Your response should be translated into spanish
+    - try to create the minimal number of user stories
     
     Here are some examples :
     - Example 1:
@@ -15,13 +16,26 @@ template = """
         Como: usuario registrado
         Quiero: restablecer mi password
         Para: recuperar el acceso a mi cuenta si la olvido o la pierdo.
+        Criterios de entrega:
+        -El usuario debe ingresar su dirección de correo electrónico en un formulario de "Recuperar contraseña".
+        -El sistema debe enviar un correo electrónico con un enlace de restablecimiento de contraseña.
+        -El enlace de restablecimiento debe ser válido por 24 horas.
+        -Al hacer clic en el enlace, el usuario debe ser redirigido a una página donde pueda ingresar una nueva contraseña.
+        -La nueva contraseña debe tener al menos 8 caracteres, con al menos una letra mayúscula, un número y un carácter especial.
+        -El sistema debe confirmar el cambio de contraseña y permitir al usuario iniciar sesión con la nueva contraseña.
     
     - Ejemplo 2:
 
         Como: un administrador del sistema
         Quiero: ver un reporte diario del uso de recursos del servidor
         Para: asegurarme de que el sistema funciona de manera eficiente y prevenir problemas.
-
+        Criterios de entrega:
+        -El reporte debe incluir el uso de CPU, memoria, y espacio en disco de los últimos 24 horas.
+        -El reporte debe generarse automáticamente cada día a las 8:00 AM y ser enviado por correo al administrador.
+        -El correo debe incluir un archivo adjunto en formato PDF con el reporte detallado.
+        -El reporte debe incluir un resumen visual (gráfica) del uso promedio en las últimas 24 horas.
+        -Si el uso de recursos supera el 80%, debe generarse una alerta en el reporte y en el sistema de notificaciones.
+    
     Please start the redaction with a warm introduction. Add the introduction \
         if you need to.
     
