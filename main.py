@@ -16,6 +16,7 @@ template = """
         Como: usuario registrado
         Quiero: restablecer mi password
         Para: recuperar el acceso a mi cuenta si la olvido o la pierdo.
+        
         Criterios de entrega:
         -El usuario debe ingresar su dirección de correo electrónico en un formulario de "Recuperar contraseña".
         -El sistema debe enviar un correo electrónico con un enlace de restablecimiento de contraseña.
@@ -29,6 +30,7 @@ template = """
         Como: un administrador del sistema
         Quiero: ver un reporte diario del uso de recursos del servidor
         Para: asegurarme de que el sistema funciona de manera eficiente y prevenir problemas.
+        
         Criterios de entrega:
         -El reporte debe incluir el uso de CPU, memoria, y espacio en disco de los últimos 24 horas.
         -El reporte debe generarse automáticamente cada día a las 8:00 AM y ser enviado por correo al administrador.
