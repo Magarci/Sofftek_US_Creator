@@ -41,7 +41,7 @@ template = """
     Please start the redaction with a warm introduction. Add the introduction \
         if you need to.
     
-    Below is the draft text, tone, and dialect:
+    Below is the draft text:
     DRAFT: {draft}
     YOUR RESPONSE:
 """
