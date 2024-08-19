@@ -74,7 +74,7 @@ st.header("Crea Historias de Usuario a partir de una lista de requisitos proporc
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("Hola soy un experto Product Owner y estoy aqui para ayudarte")
+    st.markdown("Hola soy una IA experta para ayuda a los Product Owner y estoy aqui para ayudarte")
 
 with col2:
     st.write("Contacte con Softtek para construir sus proyectos de IA")
@@ -105,7 +105,7 @@ if len(draft_input.split(" ")) > 700:
 
     
 # Output
-st.markdown("### La propuesta de user stories es:")
+st.markdown("### Respuesta:")
 
 if draft_input:
     if not groq_api_key:
