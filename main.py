@@ -88,18 +88,6 @@ if len(draft_input.split(" ")) > 700:
     st.write("Por favor, introduzca un texto más corto. La longitud máxima es de 700 palabras.")
     st.stop()
 
-# Prompt template tunning options
-"""col1, col2 = st.columns(2)
-with col1:
-    option_tone = st.selectbox(
-        '¿Qué tono quiere que tenga su redacción?',
-        ('Formal', 'Informal'))
-    
-with col2:
-    option_dialect = st.selectbox(
-        '¿Qué dialecto inglés le gustaría?',
-        ('American', 'British'))
-"""
     
 # Output
 st.markdown("### La propuesta de user stories es:")
@@ -114,8 +102,6 @@ if draft_input:
     llm = load_LLM(groq_api_key = groq_api_key)
 
     prompt_with_draft = prompt.format_prompt(
-        tone=option_tone, 
-        dialect=option_dialect, 
         draft=draft_input
     )
 
