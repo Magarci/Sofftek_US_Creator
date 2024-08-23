@@ -83,7 +83,8 @@ st.image("https://www.softtek.com/hs-fs/hubfs/Softtek/images/assets/Softtek_MR00
 
 
 # Intro: instructions
-col1, col2 = st.columns(1)
+#col1, col2 = st.columns(1)
+col1=st.columns(1)
 with col1:
     st.markdown("Hola soy una IA experta para ayuda a los Product Owner y estoy aqui para ayudarte. Crea Historias de Usuario a partir de una lista de requisitos proporcionada")
 
