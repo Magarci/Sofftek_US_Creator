@@ -9,6 +9,7 @@ template = """
     - create a set of user stories instead of a single one if needed.
     - Your response should be translated into spanish.
     - try to create the minimal number of user stories when it is possible.
+    - The format selected for Criterios de Aceptacion should be
     
     Here are some examples :
     - Example 1:
@@ -17,13 +18,37 @@ template = """
         Quiero: restablecer mi password
         Para: recuperar el acceso a mi cuenta si la olvido o la pierdo.
         
-        Criterios de entrega:
+        Criterios de aceptación (Lista):
         -El usuario debe ingresar su dirección de correo electrónico en un formulario de "Recuperar contraseña".
         -El sistema debe enviar un correo electrónico con un enlace de restablecimiento de contraseña.
         -El enlace de restablecimiento debe ser válido por 24 horas.
         -Al hacer clic en el enlace, el usuario debe ser redirigido a una página donde pueda ingresar una nueva contraseña.
         -La nueva contraseña debe tener al menos 8 caracteres, con al menos una letra mayúscula, un número y un carácter especial.
         -El sistema debe confirmar el cambio de contraseña y permitir al usuario iniciar sesión con la nueva contraseña.
+        
+        Criterios de aceptación (Gherkin):
+        Feature: Recuperar password
+
+          Scenario: El usuario solicita recuperar su password
+            Given el usuario está en la página de "Recuperar password"
+            When ingresa su dirección de correo electrónico en el formulario
+            And hace clic en el botón de "Enviar"
+            Then el sistema debe enviar un correo electrónico con un enlace de restablecimiento de password
+            And el enlace de restablecimiento debe ser válido por 24 horas
+        
+          Scenario: El usuario hace clic en el enlace de restablecimiento de password
+            Given el usuario ha recibido el correo con el enlace de restablecimiento
+            When hace clic en el enlace de restablecimiento
+            Then el usuario debe ser redirigido a una página para ingresar una nueva password
+        
+          Scenario: El usuario ingresa una nueva password válida
+            Given el usuario está en la página de restablecimiento de password
+            When ingresa una nueva password que tiene al menos 8 caracteres, una letra mayúscula, un número y un carácter especial
+            And hace clic en el botón de "Cambiar password"
+            Then el sistema debe confirmar el cambio de password
+            And permitir al usuario iniciar sesión con la nueva password
+
+
     
     - Ejemplo 2:
 
@@ -31,7 +56,7 @@ template = """
         Quiero: ver un reporte diario del uso de recursos del servidor
         Para: asegurarme de que el sistema funciona de manera eficiente y prevenir problemas.
         
-        Criterios de entrega:
+        Criterios de aceptacion:
         -El reporte debe incluir el uso de CPU, memoria, y espacio en disco de los últimos 24 horas.
         -El reporte debe generarse automáticamente cada día a las 8:00 AM y ser enviado por correo al administrador.
         -El correo debe incluir un archivo adjunto en formato PDF con el reporte detallado.
@@ -42,6 +67,7 @@ template = """
     
     Below is the draft text:
     DRAFT: {draft}
+    FORMAT: {format}
     YOUR RESPONSE:
 """
 
@@ -50,7 +76,7 @@ prompt = ChatPromptTemplate(
     messages=[
         HumanMessagePromptTemplate.from_template(template)
     ],
-    input_variables={"draft"},
+    input_variables=[ "format", "draft"]
 
 )
 
@@ -103,6 +129,14 @@ if len(draft_input.split(" ")) > 700:
     st.write("Por favor, introduzca un texto más corto. La longitud máxima es de 700 palabras.")
     st.stop()
 
+# Prompt template tunning options
+col1, col2 = st.columns(2)
+with col1:
+    option_format = st.selectbox(
+        'Que formato quieres que tengan los criterios de aceptación de tus historias?',
+        ('Lista', 'Gherkin'))
+    
+   
     
 # Output
 st.markdown("### Respuesta:")
@@ -118,6 +152,7 @@ if draft_input:
 
     prompt_with_draft = prompt.format_prompt(
         draft=draft_input
+        format=option_format, 
     )
 
     improved_redaction = llm.invoke(prompt_with_draft)
