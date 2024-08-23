@@ -71,14 +71,17 @@ template = """
     YOUR RESPONSE:
 """
 
-# prompttemplate
+
+#PromptTemplate variables definition
 prompt = ChatPromptTemplate(
     messages=[
         HumanMessagePromptTemplate.from_template(template)
     ],
     input_variables=["format", "draft"],
+    template=template,
 
 )
+
 
 #LLM and key loading function
 def load_LLM(groq_api_key):
