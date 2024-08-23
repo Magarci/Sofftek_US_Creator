@@ -81,7 +81,7 @@ st.header("Softtek User Stories Creator")
 st.image("https://www.softtek.com/hs-fs/hubfs/Softtek/images/assets/Softtek_MR001.jpg?width=452&name=Softtek_MR001.jpg", caption="Softtek Europe", use_column_width=True)
 
 # Intro: instructions
-col1, col2 = st.columns(1)
+col1, col2 = st.columns(2)
 with col1:
     st.markdown("Hola soy una IA experta para ayuda a los Product Owner y estoy aqui para ayudarte.")
 with col2:
