@@ -77,8 +77,8 @@ def load_LLM(groq_api_key):
 # Page title and header
 st.set_page_config(page_title="User Stories Creator")
 st.header("Softtek User Stories Creator")
-st.subheader("Image from URL")
-st.image("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.softtek.com%2Fes%2Fmedia-resources&psig=AOvVaw3rKKqBdM4owxorazqLk8Bq&ust=1724498336019000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOiiytf-iogDFQAAAAAdAAAAABAE", caption="Image from the web", use_column_width=True)
+st.subheader("Softtek")
+st.image("https://www.softtek.com/hs-fs/hubfs/Softtek/images/assets/Softtek_MR001.jpg?width=452&name=Softtek_MR001.jpg", caption="Softtek Europe", use_column_width=True)
 
 
 
