@@ -57,8 +57,10 @@ template = """
 
 # PromptTemplate variables definition
 prompt = ChatPromptTemplate(
+    messages=[
+        HumanMessagePromptTemplate.from_template(template)
+    ],
     input_variables=["format", "draft"],
-    template=template,
 )
 
 # LLM and key loading function
@@ -135,6 +137,4 @@ if draft_input:
     improved_redaction_content = improved_redaction.content
     st.write(improved_redaction_content)
 
-    improved_redaction = llm.invoke(prompt_with_draft)
-    improved_redaction_content = improved_redaction.content
-    st.write(improved_redaction_content)
+    
