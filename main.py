@@ -77,6 +77,10 @@ def load_LLM(groq_api_key):
 # Page title and header
 st.set_page_config(page_title="User Stories Creator")
 st.header("Softtek User Stories Creator")
+st.subheader("Image from URL")
+st.image("https://www.softtek.com/hubfs/Softtek/logos/SofttekLogo-4web.svg", caption="Image from the web", use_column_width=True)
+
+
 
 # Intro: instructions
 col1, col2 = st.columns(2)
