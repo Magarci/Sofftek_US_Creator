@@ -17,7 +17,7 @@ template = """
         Quiero: restablecer mi password
         Para: recuperar el acceso a mi cuenta si la olvido o la pierdo.
 
-        Criterios de aceptación (Lista):
+        Criterios de aceptación (only if Lista is selected as format):
         -El usuario debe ingresar su dirección de correo electrónico en un formulario de "Recuperar contraseña".
         -El sistema debe enviar un correo electrónico con un enlace de restablecimiento de contraseña.
         -El enlace de restablecimiento debe ser válido por 24 horas.
@@ -25,7 +25,7 @@ template = """
         -La nueva contraseña debe tener al menos 8 caracteres, con al menos una letra mayúscula, un número y un carácter especial.
         -El sistema debe confirmar el cambio de contraseña y permitir al usuario iniciar sesión con la nueva contraseña.
         
-        Criterios de aceptación (Gherkin):
+        Criterios de aceptación (only if Gherkin is selected as format):
         Feature: Recuperar password
 
         Scenario: El usuario solicita recuperar su password
