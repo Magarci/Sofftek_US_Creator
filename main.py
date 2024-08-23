@@ -10,7 +10,7 @@ template = """
     - Your response should be translated into Spanish.
     - Try to create the minimal number of user stories when possible.
     - The format selected for "Criterios de Aceptacion" should be or Lista or Gherkin as is selected
-    - Bold Gherkin key words if needed and start the line with these keywords
+    - Bold Gherkin key words if needed 
 
     Here are some examples:
     - Example 1:
