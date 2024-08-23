@@ -73,13 +73,9 @@ template = """
 
 
 #PromptTemplate variables definition
-prompt = ChatPromptTemplate(
-    messages=[
-        HumanMessagePromptTemplate.from_template(template)
-    ],
+prompt = PromptTemplate(
     input_variables=["format", "draft"],
     template=template,
-
 )
 
 
