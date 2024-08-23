@@ -18,7 +18,7 @@ template = """
         Quiero: restablecer mi password
         Para: recuperar el acceso a mi cuenta si la olvido o la pierdo.
 
-        Criterios de aceptación (only if Lista is selected as format):
+        Criterios de aceptación (always):
         -El usuario debe ingresar su dirección de correo electrónico en un formulario de "Recuperar contraseña".
         -El sistema debe enviar un correo electrónico con un enlace de restablecimiento de contraseña.
         -El enlace de restablecimiento debe ser válido por 24 horas.
