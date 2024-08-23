@@ -9,7 +9,8 @@ template = """
     - Create a set of user stories instead of a single one if needed.
     - Your response should be translated into Spanish.
     - Try to create the minimal number of user stories when possible.
-    - The format selected for "Criterios de Aceptacion" should be or Lista or Gherkin as is selected:
+    - The format selected for "Criterios de Aceptacion" should be or Lista or Gherkin as is selected
+    - Bold Gherkin key words if needed
 
     Here are some examples:
     - Example 1:
