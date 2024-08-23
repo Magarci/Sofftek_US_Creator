@@ -126,7 +126,7 @@ if draft_input:
     llm = load_LLM(groq_api_key=groq_api_key)
 
     # Corrected the syntax here
-    prompt_with_draft = prompt.format(
+    prompt_with_draft = prompt.format_prompt(
         draft=draft_input,
         format=option_format
     )
