@@ -76,7 +76,7 @@ prompt = ChatPromptTemplate(
     messages=[
         HumanMessagePromptTemplate.from_template(template)
     ],
-    input_variables=[ "format", "draft"]
+    input_variables={"format"}, {"draft"}
 
 )
 
