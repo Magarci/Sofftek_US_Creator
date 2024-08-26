@@ -49,7 +49,7 @@ template = """
             Then el sistema debe confirmar el cambio de password
             And permitir al usuario iniciar sesión con la nueva password
 
-    Please start the redaction with a warm introduction. Empieza siempre diciendo: Bienvenid@ a la aplicacion basada en tecnologias de IA de Softtek para ayudar a la creacion de historias de usuario.
+    Please start the redaction with a warm introduction and explaining the prioritization used. Empieza siempre diciendo: Bienvenid@ a la aplicacion basada en tecnologias de IA de Softtek para ayudar a la creacion de historias de usuario.
 
     Below is the draft text:
     DRAFT: {draft}
