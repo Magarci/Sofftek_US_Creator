@@ -11,6 +11,7 @@ template = """
     - Try to create the minimal number of user stories when possible.
     - The format selected for "Criterios de Aceptacion" should be or Lista or Gherkin as is selected
     - Bold Gherkin key words if needed 
+    - Prioritize the user stories using the method of WSJF or another method if you think it is needed. 
 
     Here are some examples:
     - Example 1:
